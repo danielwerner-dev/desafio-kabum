@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^api\/?$ index.php
+
+
+RewriteRule ^api/([a-z,0-9,A-Z,_-]+)\/([a-z,0-9,A-Z,_-]+)\/?$ webservice.php?service=$1&id=$2
+
+RewriteRule ^api/([a-z,0-9,A-Z,_-]+)\/?$ webservice.php?service=$1
